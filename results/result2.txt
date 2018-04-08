@@ -1,0 +1,174 @@
+Token 27 : #include
+Token 74 :  
+Token 50 : <
+Token 25 : stdio
+Token 64 : .
+Token 25 : h
+Token 44 : >
+Token 74 : 
+
+Token 27 : #include
+Token 74 :  
+Token 50 : <
+Token 25 : stdlib
+Token 64 : .
+Token 25 : h
+Token 44 : >
+Token 74 : 
+
+Token 27 : #include
+Token 74 :  
+Token 50 : <
+Token 25 : math
+Token 64 : .
+Token 25 : h
+Token 44 : >
+Token 74 : 
+
+
+Token 14 : #define
+Token 74 :  
+Token 25 : PI
+Token 74 :  
+Token 18 : 3.14159
+Token 74 : 
+
+
+Token 72 : void
+Token 74 :  
+Token 24 : doNothing(
+Token 68 : )
+Token 74 : 
+
+Token 29 : {
+Token 74 : 
+    
+Token 28 : int
+Token 74 :  
+Token 25 : a
+Token 9 : ,
+Token 74 :  
+Token 25 : b
+Token 69 : ;
+Token 74 : 
+    
+Token 24 : if(
+Token 25 : a
+Token 74 :  
+Token 47 : ||
+Token 74 :  
+Token 25 : b
+Token 68 : )
+Token 74 : 
+        
+Token 24 : printf(
+Token 71 : "Yes!"
+Token 68 : )
+Token 69 : ;
+Token 74 : 
+    
+Token 17 : else
+Token 74 :   
+Token 24 : printf(
+Token 71 : "No!"
+Token 68 : )
+Token 69 : ;
+Token 74 : 
+
+    
+Token 67 : return
+Token 74 :  
+Token 69 : ;
+Token 74 : 
+
+Token 65 : }
+Token 74 : 
+
+
+Token 28 : int
+Token 74 :  
+Token 24 : main(
+Token 68 : )
+Token 74 : 
+
+Token 29 : {
+Token 74 : 
+    
+Token 22 : float
+Token 74 :  
+Token 25 : r
+Token 74 :  
+Token 39 : =
+Token 74 :  
+Token 13 : 5
+Token 69 : ;
+Token 74 : 
+    
+Token 16 : double
+Token 74 :  
+Token 25 : area
+Token 74 :  
+Token 39 : =
+Token 74 :  
+Token 25 : PI
+Token 74 :  
+Token 52 : *
+Token 74 :  
+Token 25 : r
+Token 74 :  
+Token 52 : *
+Token 74 :  
+Token 25 : r
+Token 69 : ;
+Token 74 : 
+    
+Token 32 : long long
+Token 74 :  
+Token 25 : perimeter
+Token 74 :  
+Token 39 : =
+Token 74 :  
+Token 18 : 0.5
+Token 74 :  
+Token 52 : *
+Token 74 :  
+Token 25 : PI
+Token 74 :  
+Token 52 : *
+Token 74 :  
+Token 25 : r
+Token 69 : ;
+Token 74 : 
+    
+Token 24 : printf(
+Token 71 : "circle area = %.3f"
+Token 9 : ,
+Token 74 :  
+Token 25 : area
+Token 68 : )
+Token 69 : ;
+Token 74 : 
+    
+Token 24 : printf(
+Token 71 : "parimeter = %lld"
+Token 9 : ,
+Token 74 :  
+Token 25 : perimeter
+Token 68 : )
+Token 69 : ;
+Token 74 : 
+
+    
+Token 24 : doNothing(
+Token 68 : )
+Token 69 : ;
+Token 74 : 
+
+    
+Token 67 : return
+Token 74 :  
+Token 13 : 0
+Token 69 : ;
+Token 74 : 
+
+Token 65 : }

@@ -1,0 +1,193 @@
+Token 27 : #include
+Token 74 :  
+Token 50 : <
+Token 25 : stdio
+Token 64 : .
+Token 25 : h
+Token 44 : >
+Token 74 : 
+
+Token 27 : #include
+Token 74 :  
+Token 50 : <
+Token 25 : stdlib
+Token 64 : .
+Token 25 : h
+Token 44 : >
+Token 74 : 
+
+
+Token 28 : int
+Token 74 :  
+Token 24 : main(
+Token 68 : )
+Token 74 : 
+
+Token 29 : {
+Token 74 : 
+    
+Token 28 : int
+Token 74 :  
+Token 25 : a
+Token 9 : ,
+Token 74 :  
+Token 25 : b
+Token 9 : ,
+Token 74 :  
+Token 25 : i
+Token 69 : ;
+Token 74 : 
+    
+Token 7 : char
+Token 74 :  
+Token 25 : c
+Token 69 : ;
+Token 74 : 
+    
+Token 25 : a
+Token 74 :  
+Token 39 : =
+Token 74 :  
+Token 25 : b
+Token 74 :  
+Token 39 : =
+Token 74 :  
+Token 13 : 10
+Token 69 : ;
+Token 74 : 
+    
+Token 25 : c
+Token 74 :  
+Token 39 : =
+Token 74 :  
+Token 6 : 'h'
+Token 69 : ;
+Token 74 : 
+    
+Token 24 : printf(
+Token 71 : "a = b = %d, c = %c"
+Token 9 : ,
+Token 74 :  
+Token 25 : a
+Token 9 : ,
+Token 74 :  
+Token 25 : c
+Token 68 : )
+Token 69 : ;
+Token 74 : 
+    
+Token 24 : while(
+Token 25 : a
+Token 74 :  
+Token 42 : ==
+Token 74 :  
+Token 25 : b
+Token 68 : )
+Token 74 : 
+    
+Token 29 : {
+Token 74 :    
+        
+Token 25 : i
+Token 74 :  
+Token 53 : *=
+Token 74 :  
+Token 25 : a
+Token 69 : ;
+Token 74 : 
+        
+Token 25 : a
+Token 74 :  
+Token 37 : +=
+Token 74 :  
+Token 25 : i
+Token 69 : ;
+Token 74 : 
+    
+Token 65 : }
+Token 74 : 
+
+    
+Token 24 : for(
+Token 74 :  
+Token 25 : i
+Token 74 :  
+Token 39 : =
+Token 74 :  
+Token 13 : 0
+Token 74 :  
+Token 69 : ;
+Token 74 :  
+Token 25 : i
+Token 74 :  
+Token 50 : <
+Token 74 :  
+Token 13 : 10
+Token 74 :  
+Token 69 : ;
+Token 74 :  
+Token 25 : i
+Token 36 : ++
+Token 68 : )
+Token 74 : 
+    
+Token 29 : {
+Token 74 : 
+        
+Token 25 : b
+Token 74 :  
+Token 49 : <<=
+Token 74 :  
+Token 25 : i
+Token 69 : ;
+Token 74 : 
+    
+Token 65 : }
+Token 74 : 
+
+    
+Token 26 : if
+Token 74 :  
+Token 34 : (
+Token 25 : a
+Token 74 :  
+Token 54 : !=
+Token 74 :  
+Token 25 : b
+Token 68 : )
+Token 74 : 
+    
+Token 29 : {
+Token 74 : 
+        
+Token 24 : printf(
+Token 71 : "a != b\n"
+Token 68 : )
+Token 69 : ;
+Token 74 : 
+    
+Token 65 : }
+Token 74 : 
+    
+Token 17 : else
+Token 74 :  
+    
+Token 29 : {
+Token 74 : 
+        
+Token 24 : printf(
+Token 71 : "a == b\n"
+Token 68 : )
+Token 69 : ;
+Token 74 : 
+    
+Token 65 : }
+Token 74 : 
+    
+Token 67 : return
+Token 74 :  
+Token 13 : 0
+Token 69 : ;
+Token 74 : 
+
+Token 65 : }

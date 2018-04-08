@@ -1,0 +1,236 @@
+Token 27 : #include
+Token 74 :  
+Token 50 : <
+Token 25 : stdio
+Token 64 : .
+Token 25 : h
+Token 44 : >
+Token 74 : 
+
+Token 27 : #include
+Token 74 :  
+Token 50 : <
+Token 25 : stdlib
+Token 64 : .
+Token 25 : h
+Token 44 : >
+Token 74 : 
+
+Token 11 : /*  This is a comment   */
+Token 74 : 
+
+Token 10 : //  This is also a comment  
+
+Token 74 : 
+
+Token 28 : int
+Token 74 :  
+Token 24 : main(
+Token 68 : )
+Token 74 : 
+
+Token 29 : {
+Token 74 : 
+    
+Token 70 : short
+Token 74 :  
+Token 25 : a
+Token 74 :  
+Token 39 : =
+Token 74 :  
+Token 13 : 1032
+Token 69 : ;
+Token 74 : 
+    
+Token 70 : short
+Token 74 :  
+Token 25 : b
+Token 74 :  
+Token 39 : =
+Token 74 :  
+Token 13 : 3210
+Token 69 : ;
+Token 74 : 
+    
+Token 28 : int
+Token 74 :  
+Token 4 : arr[
+Token 13 : 105
+Token 66 : ]
+Token 74 :  
+Token 39 : =
+Token 74 :  
+Token 29 : {
+Token 74 :  
+Token 13 : 0
+Token 74 :  
+Token 65 : }
+Token 9 : ,
+Token 74 :  
+Token 25 : i
+Token 69 : ;
+Token 74 : 
+    
+Token 24 : printf(
+Token 71 : "Befor : a = %d, b = %d\n"
+Token 9 : ,
+Token 74 :  
+Token 25 : a
+Token 9 : ,
+Token 74 :  
+Token 25 : b
+Token 68 : )
+Token 69 : ;
+Token 74 : 
+    
+Token 25 : a
+Token 74 :  
+Token 63 : ^=
+Token 74 :  
+Token 25 : b
+Token 74 :  
+Token 63 : ^=
+Token 74 :  
+Token 25 : a
+Token 74 :  
+Token 63 : ^=
+Token 74 :  
+Token 25 : b
+Token 69 : ;
+Token 74 : 
+    
+Token 24 : printf(
+Token 71 : "After  : a = %d, b = %d\n"
+Token 9 : ,
+Token 74 :  
+Token 25 : a
+Token 9 : ,
+Token 74 :  
+Token 25 : b
+Token 68 : )
+Token 69 : ;
+Token 74 : 
+
+    
+Token 24 : while(
+Token 25 : a
+Token 74 :  
+Token 44 : >
+Token 74 :  
+Token 25 : b
+Token 68 : )
+Token 74 : 
+    
+Token 29 : {
+Token 74 : 
+        
+Token 25 : a
+Token 36 : ++
+Token 69 : ;
+Token 74 : 
+        
+Token 25 : b
+Token 61 : --
+Token 69 : ;
+Token 74 : 
+        
+Token 24 : if(
+Token 25 : a
+Token 74 :  
+Token 42 : ==
+Token 74 :  
+Token 25 : b
+Token 68 : )
+Token 74 : 
+            
+Token 5 : break
+Token 69 : ;
+Token 74 : 
+        
+Token 17 : else
+Token 74 :  
+            
+Token 12 : continue
+Token 69 : ;
+Token 74 : 
+    
+Token 65 : }
+Token 74 : 
+
+    
+Token 4 : arr[
+Token 13 : 0
+Token 66 : ]
+Token 74 :  
+Token 39 : =
+Token 74 :  
+Token 13 : 1
+Token 69 : ;
+Token 74 : 
+    
+Token 4 : arr[
+Token 13 : 1
+Token 66 : ]
+Token 74 :  
+Token 39 : =
+Token 74 :  
+Token 13 : 1
+Token 69 : ;
+Token 74 : 
+    
+Token 24 : for(
+Token 25 : i
+Token 74 :  
+Token 39 : =
+Token 74 :  
+Token 13 : 2
+Token 74 :  
+Token 69 : ;
+Token 74 :  
+Token 25 : i
+Token 74 :  
+Token 50 : <
+Token 74 :  
+Token 13 : 50
+Token 74 :  
+Token 69 : ;
+Token 74 :  
+Token 25 : i
+Token 36 : ++
+Token 68 : )
+Token 74 : 
+        
+Token 4 : arr[
+Token 25 : i
+Token 66 : ]
+Token 74 :  
+Token 39 : =
+Token 74 :  
+Token 4 : arr[
+Token 25 : i
+Token 74 :  
+Token 59 : -
+Token 74 :  
+Token 13 : 1
+Token 66 : ]
+Token 74 :  
+Token 35 : +
+Token 74 :  
+Token 4 : arr[
+Token 25 : i
+Token 74 :  
+Token 59 : -
+Token 74 :  
+Token 13 : 2
+Token 66 : ]
+Token 69 : ;
+Token 74 : 
+    
+    
+Token 67 : return
+Token 74 :  
+Token 13 : 0
+Token 69 : ;
+Token 74 : 
+
+Token 65 : }
