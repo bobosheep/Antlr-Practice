@@ -1,5 +1,5 @@
 # Project 1-AntlrPractice
-use ANTLR to write a lexical analyzer for C code
+use ANTLR to develop a lexical analyzer for C code
 
 ## How to use 
 *   Clone the reposity
@@ -21,9 +21,11 @@ use ANTLR to write a lexical analyzer for C code
 *   Then, you can execute it to test the C code(testCode1~3)
     ```
     /* excution1 for testCode1, excution2 for testCode2 and excution3 for testCode3 */
-    make excution1
-    make excution2
-    make excution3 
+    /* Or execute all test codes by executeAll*/
+    make execution1
+    make execution2
+    make execution3 
+    make executeAll
     ```
 
 ##  Reference
