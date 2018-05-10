@@ -1,7 +1,147 @@
-lexer grammar mytest;
-options {
-    language = Java;
+grammar myParser;
+options{
+    backtrack=true;
+    memoize = true;
+    k=4;
 }
+
+
+startStat:
+    (INCLUDE  '<' ID '.h' '>' WS* )+
+
+    function* 
+    mainfunction
+    function*
+;
+
+mainfunction:
+    type 'main(' params* RPAREN WS*
+    LBRACE WS*
+        stats* 
+        'return' (DEC_NUM | FLOAT_NUM)? SEMICOL 
+    RBRACE WS*      
+;
+
+
+type:
+    SHORT_TYPE      | 
+    INT_TYPE        | 
+    LONG_TYPE       |
+    FLOAT_TYPE      | 
+    LONGLONG_TYPE   |
+    CHAR_TYPE       | 
+    VOID_TYPE
+;
+
+stats:
+    assignmentStat  |
+    whileStat       |
+    ifelseStat      |
+    forStat         |
+    declareStat     |
+    procedStat      |
+    exprList
+;
+
+assignmentStat:
+    ID WS* OP_ASS WS* expr SEMICOL                      |
+    ID WS* OP_ASS WS* (DEC_NUM | FLOAT_NUM)  SEMICOL    
+;
+
+whileStat:
+    WHILE_ expr  RPAREN WS* 
+    LBRACE WS*
+        stats* WS* 
+    RBRACE WS*
+;
+
+ifelseStat:
+    IF_ expr  RPAREN WS* 
+    LBRACE WS*
+        stats* WS* 
+    RBRACE WS*
+    ('else if' LPAREN expr  RPAREN WS*
+        LBRACE WS*
+            stats* 
+        RBRACE WS*
+    )* 
+    (ELSE_ WS*
+        LBRACE WS*
+            stats* 
+        RBRACE  WS*
+    )? 
+
+;
+
+forStat:
+    FOR_ WS* expr* WS* SEMICOL WS* expr* WS* SEMICOL WS* expr*  WS* RPAREN WS*
+    LBRACE WS*
+        stats*  WS*
+    RBRACE WS*
+;
+
+function:
+    type FUNCTION_CALL params* RPAREN WS*
+    LBRACE  WS*
+        stats* 
+        'return' (DEC_NUM | FLOAT_NUM)? SEMICOL 
+    RBRACE   WS*                               |
+    type WS* FUNCTION_CALL params* RPAREN  SEMICOL
+
+;
+
+
+declareStat:
+    type ID SEMICOL     |
+    type exprList       |
+    type assignmentStat 
+;
+
+procedStat:
+    FUNCTION_CALL arguments RPAREN SEMICOL
+;
+
+exprList:
+    expr (COMMA expr)* SEMICOL
+;
+
+arguments:
+    expr (COMMA expr)*
+;
+
+params:
+    param (COMMA param)*
+;
+
+param:
+    type ID     |
+    type
+;
+
+expr :
+    operationStat ((OP_LAND | OP_LOR) operationStat)*
+;
+
+operationStat:
+    add ((  OP_EQ | OP_LE | OP_GE | OP_NE | OP_GT | OP_LT | OP_ASS |
+            OP_ADDAS | OP_SUBAS | OP_MULAS | OP_DIVAS | OP_XORAS |
+            OP_MODAS | OP_LSAS | OP_RSAS | OP_ADDADD | OP_SUBSUB )  add)*
+;
+
+add:
+    multiply ((OP_ADD | OP_SUB) multiply)*
+;
+
+multiply:
+    atom ((OP_MUL | OP_DIV ) atom)*
+;
+
+atom:
+    DEC_NUM             |
+    FLOAT_NUM           |
+    ID                  |
+    LPAREN expr RPAREN  
+;
 
 /*---------------------*/
 /*  Reserved keywords  */
@@ -16,9 +156,9 @@ LONGLONG_TYPE   :   'long long' ;
 CHAR_TYPE       :   'char'      ;
 VOID_TYPE       :   'void'      ;
 
-WHILE_      :   'while'     ;   
-FOR_        :   'for'       ;
-IF_         :   'if'        ;
+WHILE_      :   'while('     ;   
+FOR_        :   'for('       ;
+IF_         :   'if('        ;
 ELSE_       :   'else'      ;
 RETURN_     :   'return'    ;
 BREAK_      :   'break'     ;
@@ -132,9 +272,9 @@ STRING  : '"' ('""' | ~'"')* '"';
 /*-------------------*/
 /*      Comments     */
 /*-------------------*/
-COMMENT1 : '//'(.)*'\n';
-COMMENT2 : '/*'(.)*'*/';
+COMMENT1 : '//'(.)*'\n' {skip();};
+COMMENT2 : '/*'(.)*'*/' {skip();};
 
 
-WS  : (' ' | '\r' | '\t' | '\n')+
+WS  : (' ' | '\r' | '\t' | '\n')+ {skip();}
     ;
