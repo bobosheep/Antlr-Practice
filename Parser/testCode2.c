@@ -2,16 +2,28 @@
 #include <stdlib.h>
 #include <math.h>
 
-void doNothing()
+//comment comment
+
+void doSomething(long long perimeter)
 {
-    int a, b;
-    if(a >= b)
+    int i = 50, something;
+    if(perimeter >= 50)
     {
-        a -= b;
+        something = 0;
+        while(i > 50)
+        {
+            something += i;
+            i -= 1;
+        }
     }
     else
     {
-        b += a;
+        something = 0;
+        while(i > 50)
+        {
+            something -= i;
+            i -= 1;
+        }
     }
 
     return ;
@@ -19,11 +31,12 @@ void doNothing()
 
 int main()
 {
-    float r = 5;
+    float r = 5, PI = 3.14;
+
     double area = PI * r * r;
     long long perimeter = 0.5 * PI * r;
 
-    doNothing();
+    doNothing(perimeter);
 
     return 0;
 }

@@ -2,7 +2,7 @@ grammar myParser;
 options{
     backtrack=true;
     memoize = true;
-    k=4;
+    k=6;
 }
 
 
@@ -17,8 +17,8 @@ startStat:
 mainfunction:
     type 'main(' params* RPAREN WS*
     LBRACE WS*
-        stats* 
-        'return' (DEC_NUM | FLOAT_NUM)? SEMICOL 
+        stats*  WS*
+        RETURN_ (DEC_NUM | FLOAT_NUM)? SEMICOL 
     RBRACE WS*      
 ;
 
@@ -28,6 +28,7 @@ type:
     INT_TYPE        | 
     LONG_TYPE       |
     FLOAT_TYPE      | 
+    DOUBLE_TYPE     |
     LONGLONG_TYPE   |
     CHAR_TYPE       | 
     VOID_TYPE
@@ -40,7 +41,9 @@ stats:
     forStat         |
     declareStat     |
     procedStat      |
-    exprList
+    exprList        |
+    breakStat       |
+    continueStat    
 ;
 
 assignmentStat:
@@ -51,42 +54,42 @@ assignmentStat:
 whileStat:
     WHILE_ expr  RPAREN WS* 
     LBRACE WS*
-        stats* WS* 
+        stats+ WS* 
     RBRACE WS*
 ;
 
 ifelseStat:
     IF_ expr  RPAREN WS* 
     LBRACE WS*
-        stats* WS* 
+        stats+ WS* 
     RBRACE WS*
-    ('else if' LPAREN expr  RPAREN WS*
+    ('else if(' expr  RPAREN WS*
         LBRACE WS*
-            stats* 
+            stats+ 
         RBRACE WS*
     )* 
     (ELSE_ WS*
-        LBRACE WS*
-            stats* 
-        RBRACE  WS*
+        LBRACE
+            stats+ 
+        RBRACE 
     )? 
 
 ;
 
 forStat:
-    FOR_ WS* expr* WS* SEMICOL WS* expr* WS* SEMICOL WS* expr*  WS* RPAREN WS*
+    FOR_ expr*  SEMICOL  expr* SEMICOL expr* RPAREN WS*
     LBRACE WS*
-        stats*  WS*
+        stats+  WS*
     RBRACE WS*
 ;
 
 function:
-    type FUNCTION_CALL params* RPAREN WS*
-    LBRACE  WS*
-        stats* 
+    type FUNCTION_CALL params* RPAREN 
+    LBRACE 
+        stats* WS*
         'return' (DEC_NUM | FLOAT_NUM)? SEMICOL 
-    RBRACE   WS*                               |
-    type WS* FUNCTION_CALL params* RPAREN  SEMICOL
+    RBRACE                                 |
+    type FUNCTION_CALL params* RPAREN  SEMICOL
 
 ;
 
@@ -103,6 +106,14 @@ procedStat:
 
 exprList:
     expr (COMMA expr)* SEMICOL
+;
+
+breakStat:
+    BREAK_ SEMICOL
+;
+
+continueStat:
+    CONTINUE_ SEMICOL
 ;
 
 arguments:
@@ -125,7 +136,7 @@ expr :
 operationStat:
     add ((  OP_EQ | OP_LE | OP_GE | OP_NE | OP_GT | OP_LT | OP_ASS |
             OP_ADDAS | OP_SUBAS | OP_MULAS | OP_DIVAS | OP_XORAS |
-            OP_MODAS | OP_LSAS | OP_RSAS | OP_ADDADD | OP_SUBSUB )  add)*
+            OP_MODAS | OP_LSAS | OP_RSAS )  add)*
 ;
 
 add:
@@ -156,13 +167,13 @@ LONGLONG_TYPE   :   'long long' ;
 CHAR_TYPE       :   'char'      ;
 VOID_TYPE       :   'void'      ;
 
-WHILE_      :   'while('     ;   
-FOR_        :   'for('       ;
-IF_         :   'if('        ;
+WHILE_      :   'while('    ;   
+FOR_        :   'for('      ;
+IF_         :   'if('       ;
 ELSE_       :   'else'      ;
 RETURN_     :   'return'    ;
 BREAK_      :   'break'     ;
-CONTINUE    :   'continue'  ;
+CONTINUE_   :   'continue'  ;
 INCLUDE     :   '#include'  ;
 DEFINE      :   '#define'   ;
 

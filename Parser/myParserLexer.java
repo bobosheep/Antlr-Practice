@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 myParser.g 2018-05-11 03:59:16
+// $ANTLR 3.5.2 myParser.g 2018-05-11 11:51:14
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -19,7 +19,7 @@ public class myParserLexer extends Lexer {
 	public static final int COMMA=9;
 	public static final int COMMENT1=10;
 	public static final int COMMENT2=11;
-	public static final int CONTINUE=12;
+	public static final int CONTINUE_=12;
 	public static final int DEC_NUM=13;
 	public static final int DEFINE=14;
 	public static final int DIGIT=15;
@@ -124,10 +124,10 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = T__76;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:3:7: ( 'else if' )
-			// myParser.g:3:9: 'else if'
+			// myParser.g:3:7: ( 'else if(' )
+			// myParser.g:3:9: 'else if('
 			{
-			match("else if"); 
+			match("else if("); 
 
 			}
 
@@ -166,8 +166,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = SHORT_TYPE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:150:17: ( 'short' )
-			// myParser.g:150:21: 'short'
+			// myParser.g:161:17: ( 'short' )
+			// myParser.g:161:21: 'short'
 			{
 			match("short"); 
 
@@ -187,8 +187,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = INT_TYPE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:151:17: ( 'int' )
-			// myParser.g:151:21: 'int'
+			// myParser.g:162:17: ( 'int' )
+			// myParser.g:162:21: 'int'
 			{
 			match("int"); 
 
@@ -208,8 +208,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = LONG_TYPE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:152:17: ( 'long' )
-			// myParser.g:152:21: 'long'
+			// myParser.g:163:17: ( 'long' )
+			// myParser.g:163:21: 'long'
 			{
 			match("long"); 
 
@@ -229,8 +229,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = FLOAT_TYPE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:153:17: ( 'float' )
-			// myParser.g:153:21: 'float'
+			// myParser.g:164:17: ( 'float' )
+			// myParser.g:164:21: 'float'
 			{
 			match("float"); 
 
@@ -250,8 +250,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = DOUBLE_TYPE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:154:17: ( 'double' )
-			// myParser.g:154:21: 'double'
+			// myParser.g:165:17: ( 'double' )
+			// myParser.g:165:21: 'double'
 			{
 			match("double"); 
 
@@ -271,8 +271,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = LONGLONG_TYPE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:155:17: ( 'long long' )
-			// myParser.g:155:21: 'long long'
+			// myParser.g:166:17: ( 'long long' )
+			// myParser.g:166:21: 'long long'
 			{
 			match("long long"); 
 
@@ -292,8 +292,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = CHAR_TYPE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:156:17: ( 'char' )
-			// myParser.g:156:21: 'char'
+			// myParser.g:167:17: ( 'char' )
+			// myParser.g:167:21: 'char'
 			{
 			match("char"); 
 
@@ -313,8 +313,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = VOID_TYPE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:157:17: ( 'void' )
-			// myParser.g:157:21: 'void'
+			// myParser.g:168:17: ( 'void' )
+			// myParser.g:168:21: 'void'
 			{
 			match("void"); 
 
@@ -334,8 +334,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = WHILE_;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:159:13: ( 'while(' )
-			// myParser.g:159:17: 'while('
+			// myParser.g:170:13: ( 'while(' )
+			// myParser.g:170:17: 'while('
 			{
 			match("while("); 
 
@@ -355,8 +355,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = FOR_;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:160:13: ( 'for(' )
-			// myParser.g:160:17: 'for('
+			// myParser.g:171:13: ( 'for(' )
+			// myParser.g:171:17: 'for('
 			{
 			match("for("); 
 
@@ -376,8 +376,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = IF_;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:161:13: ( 'if(' )
-			// myParser.g:161:17: 'if('
+			// myParser.g:172:13: ( 'if(' )
+			// myParser.g:172:17: 'if('
 			{
 			match("if("); 
 
@@ -397,8 +397,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = ELSE_;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:162:13: ( 'else' )
-			// myParser.g:162:17: 'else'
+			// myParser.g:173:13: ( 'else' )
+			// myParser.g:173:17: 'else'
 			{
 			match("else"); 
 
@@ -418,8 +418,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = RETURN_;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:163:13: ( 'return' )
-			// myParser.g:163:17: 'return'
+			// myParser.g:174:13: ( 'return' )
+			// myParser.g:174:17: 'return'
 			{
 			match("return"); 
 
@@ -439,8 +439,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = BREAK_;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:164:13: ( 'break' )
-			// myParser.g:164:17: 'break'
+			// myParser.g:175:13: ( 'break' )
+			// myParser.g:175:17: 'break'
 			{
 			match("break"); 
 
@@ -455,13 +455,13 @@ public class myParserLexer extends Lexer {
 	}
 	// $ANTLR end "BREAK_"
 
-	// $ANTLR start "CONTINUE"
-	public final void mCONTINUE() throws RecognitionException {
+	// $ANTLR start "CONTINUE_"
+	public final void mCONTINUE_() throws RecognitionException {
 		try {
-			int _type = CONTINUE;
+			int _type = CONTINUE_;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:165:13: ( 'continue' )
-			// myParser.g:165:17: 'continue'
+			// myParser.g:176:13: ( 'continue' )
+			// myParser.g:176:17: 'continue'
 			{
 			match("continue"); 
 
@@ -474,15 +474,15 @@ public class myParserLexer extends Lexer {
 			// do for sure before leaving
 		}
 	}
-	// $ANTLR end "CONTINUE"
+	// $ANTLR end "CONTINUE_"
 
 	// $ANTLR start "INCLUDE"
 	public final void mINCLUDE() throws RecognitionException {
 		try {
 			int _type = INCLUDE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:166:13: ( '#include' )
-			// myParser.g:166:17: '#include'
+			// myParser.g:177:13: ( '#include' )
+			// myParser.g:177:17: '#include'
 			{
 			match("#include"); 
 
@@ -502,8 +502,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = DEFINE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:167:13: ( '#define' )
-			// myParser.g:167:17: '#define'
+			// myParser.g:178:13: ( '#define' )
+			// myParser.g:178:17: '#define'
 			{
 			match("#define"); 
 
@@ -523,8 +523,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_EQ;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:173:9: ( '==' )
-			// myParser.g:173:13: '=='
+			// myParser.g:184:9: ( '==' )
+			// myParser.g:184:13: '=='
 			{
 			match("=="); 
 
@@ -544,8 +544,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_LE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:174:9: ( '<=' )
-			// myParser.g:174:13: '<='
+			// myParser.g:185:9: ( '<=' )
+			// myParser.g:185:13: '<='
 			{
 			match("<="); 
 
@@ -565,8 +565,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_GE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:175:9: ( '>=' )
-			// myParser.g:175:13: '>='
+			// myParser.g:186:9: ( '>=' )
+			// myParser.g:186:13: '>='
 			{
 			match(">="); 
 
@@ -586,8 +586,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_NE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:176:9: ( '!=' )
-			// myParser.g:176:13: '!='
+			// myParser.g:187:9: ( '!=' )
+			// myParser.g:187:13: '!='
 			{
 			match("!="); 
 
@@ -607,8 +607,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_GT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:177:9: ( '>' )
-			// myParser.g:177:13: '>'
+			// myParser.g:188:9: ( '>' )
+			// myParser.g:188:13: '>'
 			{
 			match('>'); 
 			}
@@ -627,8 +627,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_LT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:178:9: ( '<' )
-			// myParser.g:178:13: '<'
+			// myParser.g:189:9: ( '<' )
+			// myParser.g:189:13: '<'
 			{
 			match('<'); 
 			}
@@ -647,8 +647,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_ADDAS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:184:13: ( '+=' )
-			// myParser.g:184:17: '+='
+			// myParser.g:195:13: ( '+=' )
+			// myParser.g:195:17: '+='
 			{
 			match("+="); 
 
@@ -668,8 +668,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_SUBAS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:185:13: ( '-=' )
-			// myParser.g:185:17: '-='
+			// myParser.g:196:13: ( '-=' )
+			// myParser.g:196:17: '-='
 			{
 			match("-="); 
 
@@ -689,8 +689,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_MULAS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:186:13: ( '*=' )
-			// myParser.g:186:17: '*='
+			// myParser.g:197:13: ( '*=' )
+			// myParser.g:197:17: '*='
 			{
 			match("*="); 
 
@@ -710,8 +710,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_DIVAS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:187:13: ( '/=' )
-			// myParser.g:187:17: '/='
+			// myParser.g:198:13: ( '/=' )
+			// myParser.g:198:17: '/='
 			{
 			match("/="); 
 
@@ -731,8 +731,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_XORAS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:188:13: ( '^=' )
-			// myParser.g:188:17: '^='
+			// myParser.g:199:13: ( '^=' )
+			// myParser.g:199:17: '^='
 			{
 			match("^="); 
 
@@ -752,8 +752,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_MODAS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:189:13: ( '%=' )
-			// myParser.g:189:17: '%='
+			// myParser.g:200:13: ( '%=' )
+			// myParser.g:200:17: '%='
 			{
 			match("%="); 
 
@@ -773,8 +773,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_LSAS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:190:13: ( '<<=' )
-			// myParser.g:190:17: '<<='
+			// myParser.g:201:13: ( '<<=' )
+			// myParser.g:201:17: '<<='
 			{
 			match("<<="); 
 
@@ -794,8 +794,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_RSAS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:191:13: ( '>>=' )
-			// myParser.g:191:17: '>>='
+			// myParser.g:202:13: ( '>>=' )
+			// myParser.g:202:17: '>>='
 			{
 			match(">>="); 
 
@@ -815,8 +815,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_ADDADD;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:192:13: ( '++' )
-			// myParser.g:192:17: '++'
+			// myParser.g:203:13: ( '++' )
+			// myParser.g:203:17: '++'
 			{
 			match("++"); 
 
@@ -836,8 +836,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_SUBSUB;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:193:13: ( '--' )
-			// myParser.g:193:17: '--'
+			// myParser.g:204:13: ( '--' )
+			// myParser.g:204:17: '--'
 			{
 			match("--"); 
 
@@ -857,8 +857,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_NOT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:199:9: ( '!' )
-			// myParser.g:199:13: '!'
+			// myParser.g:210:9: ( '!' )
+			// myParser.g:210:13: '!'
 			{
 			match('!'); 
 			}
@@ -877,8 +877,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_LAND;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:200:9: ( '&&' )
-			// myParser.g:200:13: '&&'
+			// myParser.g:211:9: ( '&&' )
+			// myParser.g:211:13: '&&'
 			{
 			match("&&"); 
 
@@ -898,8 +898,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_LOR;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:201:9: ( '||' )
-			// myParser.g:201:13: '||'
+			// myParser.g:212:9: ( '||' )
+			// myParser.g:212:13: '||'
 			{
 			match("||"); 
 
@@ -919,8 +919,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_AND;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:207:9: ( '&' )
-			// myParser.g:207:13: '&'
+			// myParser.g:218:9: ( '&' )
+			// myParser.g:218:13: '&'
 			{
 			match('&'); 
 			}
@@ -939,8 +939,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_OR;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:208:9: ( '|' )
-			// myParser.g:208:13: '|'
+			// myParser.g:219:9: ( '|' )
+			// myParser.g:219:13: '|'
 			{
 			match('|'); 
 			}
@@ -959,8 +959,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_XOR;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:209:9: ( '^' )
-			// myParser.g:209:13: '^'
+			// myParser.g:220:9: ( '^' )
+			// myParser.g:220:13: '^'
 			{
 			match('^'); 
 			}
@@ -979,8 +979,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_LS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:210:9: ( '<<' )
-			// myParser.g:210:13: '<<'
+			// myParser.g:221:9: ( '<<' )
+			// myParser.g:221:13: '<<'
 			{
 			match("<<"); 
 
@@ -1000,8 +1000,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_RS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:211:9: ( '>>' )
-			// myParser.g:211:13: '>>'
+			// myParser.g:222:9: ( '>>' )
+			// myParser.g:222:13: '>>'
 			{
 			match(">>"); 
 
@@ -1021,8 +1021,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_ADD;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:217:10: ( '+' )
-			// myParser.g:217:14: '+'
+			// myParser.g:228:10: ( '+' )
+			// myParser.g:228:14: '+'
 			{
 			match('+'); 
 			}
@@ -1041,8 +1041,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_SUB;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:218:10: ( '-' )
-			// myParser.g:218:14: '-'
+			// myParser.g:229:10: ( '-' )
+			// myParser.g:229:14: '-'
 			{
 			match('-'); 
 			}
@@ -1061,8 +1061,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_MUL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:219:10: ( '*' )
-			// myParser.g:219:14: '*'
+			// myParser.g:230:10: ( '*' )
+			// myParser.g:230:14: '*'
 			{
 			match('*'); 
 			}
@@ -1081,8 +1081,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_DIV;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:220:10: ( '/' )
-			// myParser.g:220:14: '/'
+			// myParser.g:231:10: ( '/' )
+			// myParser.g:231:14: '/'
 			{
 			match('/'); 
 			}
@@ -1101,8 +1101,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = OP_ASS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:221:10: ( '=' )
-			// myParser.g:221:14: '='
+			// myParser.g:232:10: ( '=' )
+			// myParser.g:232:14: '='
 			{
 			match('='); 
 			}
@@ -1121,10 +1121,10 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = DEC_NUM;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:227:9: ( ( '0' | ( '1' .. '9' ) ( DIGIT )* ) )
-			// myParser.g:227:11: ( '0' | ( '1' .. '9' ) ( DIGIT )* )
+			// myParser.g:238:9: ( ( '0' | ( '1' .. '9' ) ( DIGIT )* ) )
+			// myParser.g:238:11: ( '0' | ( '1' .. '9' ) ( DIGIT )* )
 			{
-			// myParser.g:227:11: ( '0' | ( '1' .. '9' ) ( DIGIT )* )
+			// myParser.g:238:11: ( '0' | ( '1' .. '9' ) ( DIGIT )* )
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0=='0') ) {
@@ -1142,13 +1142,13 @@ public class myParserLexer extends Lexer {
 
 			switch (alt2) {
 				case 1 :
-					// myParser.g:227:12: '0'
+					// myParser.g:238:12: '0'
 					{
 					match('0'); 
 					}
 					break;
 				case 2 :
-					// myParser.g:227:18: ( '1' .. '9' ) ( DIGIT )*
+					// myParser.g:238:18: ( '1' .. '9' ) ( DIGIT )*
 					{
 					if ( (input.LA(1) >= '1' && input.LA(1) <= '9') ) {
 						input.consume();
@@ -1158,7 +1158,7 @@ public class myParserLexer extends Lexer {
 						recover(mse);
 						throw mse;
 					}
-					// myParser.g:227:28: ( DIGIT )*
+					// myParser.g:238:28: ( DIGIT )*
 					loop1:
 					while (true) {
 						int alt1=2;
@@ -1208,8 +1208,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:229:4: ( ( LETTER ) ( LETTER | DIGIT )* )
-			// myParser.g:229:6: ( LETTER ) ( LETTER | DIGIT )*
+			// myParser.g:240:4: ( ( LETTER ) ( LETTER | DIGIT )* )
+			// myParser.g:240:6: ( LETTER ) ( LETTER | DIGIT )*
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -1219,7 +1219,7 @@ public class myParserLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// myParser.g:229:14: ( LETTER | DIGIT )*
+			// myParser.g:240:14: ( LETTER | DIGIT )*
 			loop3:
 			while (true) {
 				int alt3=2;
@@ -1264,26 +1264,26 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = FLOAT_NUM;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:231:10: ( FLOAT_NUM1 | FLOAT_NUM2 | FLOAT_NUM3 )
+			// myParser.g:242:10: ( FLOAT_NUM1 | FLOAT_NUM2 | FLOAT_NUM3 )
 			int alt4=3;
 			alt4 = dfa4.predict(input);
 			switch (alt4) {
 				case 1 :
-					// myParser.g:231:12: FLOAT_NUM1
+					// myParser.g:242:12: FLOAT_NUM1
 					{
 					mFLOAT_NUM1(); 
 
 					}
 					break;
 				case 2 :
-					// myParser.g:231:25: FLOAT_NUM2
+					// myParser.g:242:25: FLOAT_NUM2
 					{
 					mFLOAT_NUM2(); 
 
 					}
 					break;
 				case 3 :
-					// myParser.g:231:38: FLOAT_NUM3
+					// myParser.g:242:38: FLOAT_NUM3
 					{
 					mFLOAT_NUM3(); 
 
@@ -1303,10 +1303,10 @@ public class myParserLexer extends Lexer {
 	// $ANTLR start "FLOAT_NUM1"
 	public final void mFLOAT_NUM1() throws RecognitionException {
 		try {
-			// myParser.g:232:20: ( ( DIGIT )+ '.' ( DIGIT )* )
-			// myParser.g:232:22: ( DIGIT )+ '.' ( DIGIT )*
+			// myParser.g:243:20: ( ( DIGIT )+ '.' ( DIGIT )* )
+			// myParser.g:243:22: ( DIGIT )+ '.' ( DIGIT )*
 			{
-			// myParser.g:232:22: ( DIGIT )+
+			// myParser.g:243:22: ( DIGIT )+
 			int cnt5=0;
 			loop5:
 			while (true) {
@@ -1340,7 +1340,7 @@ public class myParserLexer extends Lexer {
 			}
 
 			match('.'); 
-			// myParser.g:232:33: ( DIGIT )*
+			// myParser.g:243:33: ( DIGIT )*
 			loop6:
 			while (true) {
 				int alt6=2;
@@ -1381,11 +1381,11 @@ public class myParserLexer extends Lexer {
 	// $ANTLR start "FLOAT_NUM2"
 	public final void mFLOAT_NUM2() throws RecognitionException {
 		try {
-			// myParser.g:233:20: ( '.' ( DIGIT )+ )
-			// myParser.g:233:22: '.' ( DIGIT )+
+			// myParser.g:244:20: ( '.' ( DIGIT )+ )
+			// myParser.g:244:22: '.' ( DIGIT )+
 			{
 			match('.'); 
-			// myParser.g:233:25: ( DIGIT )+
+			// myParser.g:244:25: ( DIGIT )+
 			int cnt7=0;
 			loop7:
 			while (true) {
@@ -1430,10 +1430,10 @@ public class myParserLexer extends Lexer {
 	// $ANTLR start "FLOAT_NUM3"
 	public final void mFLOAT_NUM3() throws RecognitionException {
 		try {
-			// myParser.g:234:20: ( ( DIGIT )+ )
-			// myParser.g:234:22: ( DIGIT )+
+			// myParser.g:245:20: ( ( DIGIT )+ )
+			// myParser.g:245:22: ( DIGIT )+
 			{
-			// myParser.g:234:22: ( DIGIT )+
+			// myParser.g:245:22: ( DIGIT )+
 			int cnt8=0;
 			loop8:
 			while (true) {
@@ -1478,7 +1478,7 @@ public class myParserLexer extends Lexer {
 	// $ANTLR start "LETTER"
 	public final void mLETTER() throws RecognitionException {
 		try {
-			// myParser.g:235:17: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )
+			// myParser.g:246:17: ( 'a' .. 'z' | 'A' .. 'Z' | '_' )
 			// myParser.g:
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
@@ -1501,7 +1501,7 @@ public class myParserLexer extends Lexer {
 	// $ANTLR start "DIGIT"
 	public final void mDIGIT() throws RecognitionException {
 		try {
-			// myParser.g:236:16: ( '0' .. '9' )
+			// myParser.g:247:16: ( '0' .. '9' )
 			// myParser.g:
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
@@ -1526,8 +1526,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = LPAREN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:242:8: ( '(' )
-			// myParser.g:242:10: '('
+			// myParser.g:253:8: ( '(' )
+			// myParser.g:253:10: '('
 			{
 			match('('); 
 			}
@@ -1546,8 +1546,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = RPAREN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:243:8: ( ')' )
-			// myParser.g:243:10: ')'
+			// myParser.g:254:8: ( ')' )
+			// myParser.g:254:10: ')'
 			{
 			match(')'); 
 			}
@@ -1566,8 +1566,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = LBRACK;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:244:8: ( '[' )
-			// myParser.g:244:10: '['
+			// myParser.g:255:8: ( '[' )
+			// myParser.g:255:10: '['
 			{
 			match('['); 
 			}
@@ -1586,8 +1586,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = RBRACK;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:245:8: ( ']' )
-			// myParser.g:245:10: ']'
+			// myParser.g:256:8: ( ']' )
+			// myParser.g:256:10: ']'
 			{
 			match(']'); 
 			}
@@ -1606,8 +1606,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = LBRACE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:246:8: ( '{' )
-			// myParser.g:246:10: '{'
+			// myParser.g:257:8: ( '{' )
+			// myParser.g:257:10: '{'
 			{
 			match('{'); 
 			}
@@ -1626,8 +1626,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = RBRACE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:247:8: ( '}' )
-			// myParser.g:247:10: '}'
+			// myParser.g:258:8: ( '}' )
+			// myParser.g:258:10: '}'
 			{
 			match('}'); 
 			}
@@ -1646,8 +1646,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = PERIOD;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:248:8: ( '.' )
-			// myParser.g:248:10: '.'
+			// myParser.g:259:8: ( '.' )
+			// myParser.g:259:10: '.'
 			{
 			match('.'); 
 			}
@@ -1666,8 +1666,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = COMMA;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:249:7: ( ',' )
-			// myParser.g:249:9: ','
+			// myParser.g:260:7: ( ',' )
+			// myParser.g:260:9: ','
 			{
 			match(','); 
 			}
@@ -1686,8 +1686,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = SEMICOL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:250:9: ( ';' )
-			// myParser.g:250:11: ';'
+			// myParser.g:261:9: ( ';' )
+			// myParser.g:261:11: ';'
 			{
 			match(';'); 
 			}
@@ -1706,8 +1706,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = COLON;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:251:7: ( ':' )
-			// myParser.g:251:9: ':'
+			// myParser.g:262:7: ( ':' )
+			// myParser.g:262:9: ':'
 			{
 			match(':'); 
 			}
@@ -1726,11 +1726,11 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = FUNCTION_CALL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:257:15: ( ( ID ) ( LPAREN ) )
-			// myParser.g:257:17: ( ID ) ( LPAREN )
+			// myParser.g:268:15: ( ( ID ) ( LPAREN ) )
+			// myParser.g:268:17: ( ID ) ( LPAREN )
 			{
-			// myParser.g:257:17: ( ID )
-			// myParser.g:257:18: ID
+			// myParser.g:268:17: ( ID )
+			// myParser.g:268:18: ID
 			{
 			mID(); 
 
@@ -1760,11 +1760,11 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = ARRAY;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:262:7: ( ( ID ) ( LBRACK ) )
-			// myParser.g:262:9: ( ID ) ( LBRACK )
+			// myParser.g:273:7: ( ( ID ) ( LBRACK ) )
+			// myParser.g:273:9: ( ID ) ( LBRACK )
 			{
-			// myParser.g:262:9: ( ID )
-			// myParser.g:262:10: ID
+			// myParser.g:273:9: ( ID )
+			// myParser.g:273:10: ID
 			{
 			mID(); 
 
@@ -1794,8 +1794,8 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = CHAR;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:268:9: ( '\\'' ( LETTER ) '\\'' )
-			// myParser.g:268:11: '\\'' ( LETTER ) '\\''
+			// myParser.g:279:9: ( '\\'' ( LETTER ) '\\'' )
+			// myParser.g:279:11: '\\'' ( LETTER ) '\\''
 			{
 			match('\''); 
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
@@ -1823,11 +1823,11 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = STRING;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:269:9: ( '\"' ( '\"\"' |~ '\"' )* '\"' )
-			// myParser.g:269:11: '\"' ( '\"\"' |~ '\"' )* '\"'
+			// myParser.g:280:9: ( '\"' ( '\"\"' |~ '\"' )* '\"' )
+			// myParser.g:280:11: '\"' ( '\"\"' |~ '\"' )* '\"'
 			{
 			match('\"'); 
-			// myParser.g:269:15: ( '\"\"' |~ '\"' )*
+			// myParser.g:280:15: ( '\"\"' |~ '\"' )*
 			loop9:
 			while (true) {
 				int alt9=3;
@@ -1845,14 +1845,14 @@ public class myParserLexer extends Lexer {
 
 				switch (alt9) {
 				case 1 :
-					// myParser.g:269:16: '\"\"'
+					// myParser.g:280:16: '\"\"'
 					{
 					match("\"\""); 
 
 					}
 					break;
 				case 2 :
-					// myParser.g:269:23: ~ '\"'
+					// myParser.g:280:23: ~ '\"'
 					{
 					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '\uFFFF') ) {
 						input.consume();
@@ -1887,12 +1887,12 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = COMMENT1;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:275:10: ( '//' ( . )* '\\n' )
-			// myParser.g:275:12: '//' ( . )* '\\n'
+			// myParser.g:286:10: ( '//' ( . )* '\\n' )
+			// myParser.g:286:12: '//' ( . )* '\\n'
 			{
 			match("//"); 
 
-			// myParser.g:275:16: ( . )*
+			// myParser.g:286:16: ( . )*
 			loop10:
 			while (true) {
 				int alt10=2;
@@ -1906,7 +1906,7 @@ public class myParserLexer extends Lexer {
 
 				switch (alt10) {
 				case 1 :
-					// myParser.g:275:17: .
+					// myParser.g:286:17: .
 					{
 					matchAny(); 
 					}
@@ -1935,12 +1935,12 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = COMMENT2;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:276:10: ( '/*' ( . )* '*/' )
-			// myParser.g:276:12: '/*' ( . )* '*/'
+			// myParser.g:287:10: ( '/*' ( . )* '*/' )
+			// myParser.g:287:12: '/*' ( . )* '*/'
 			{
 			match("/*"); 
 
-			// myParser.g:276:16: ( . )*
+			// myParser.g:287:16: ( . )*
 			loop11:
 			while (true) {
 				int alt11=2;
@@ -1961,7 +1961,7 @@ public class myParserLexer extends Lexer {
 
 				switch (alt11) {
 				case 1 :
-					// myParser.g:276:17: .
+					// myParser.g:287:17: .
 					{
 					matchAny(); 
 					}
@@ -1991,10 +1991,10 @@ public class myParserLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// myParser.g:279:5: ( ( ' ' | '\\r' | '\\t' | '\\n' )+ )
-			// myParser.g:279:7: ( ' ' | '\\r' | '\\t' | '\\n' )+
+			// myParser.g:290:5: ( ( ' ' | '\\r' | '\\t' | '\\n' )+ )
+			// myParser.g:290:7: ( ' ' | '\\r' | '\\t' | '\\n' )+
 			{
-			// myParser.g:279:7: ( ' ' | '\\r' | '\\t' | '\\n' )+
+			// myParser.g:290:7: ( ' ' | '\\r' | '\\t' | '\\n' )+
 			int cnt12=0;
 			loop12:
 			while (true) {
@@ -2041,7 +2041,7 @@ public class myParserLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// myParser.g:1:8: ( T__75 | T__76 | T__77 | SHORT_TYPE | INT_TYPE | LONG_TYPE | FLOAT_TYPE | DOUBLE_TYPE | LONGLONG_TYPE | CHAR_TYPE | VOID_TYPE | WHILE_ | FOR_ | IF_ | ELSE_ | RETURN_ | BREAK_ | CONTINUE | INCLUDE | DEFINE | OP_EQ | OP_LE | OP_GE | OP_NE | OP_GT | OP_LT | OP_ADDAS | OP_SUBAS | OP_MULAS | OP_DIVAS | OP_XORAS | OP_MODAS | OP_LSAS | OP_RSAS | OP_ADDADD | OP_SUBSUB | OP_NOT | OP_LAND | OP_LOR | OP_AND | OP_OR | OP_XOR | OP_LS | OP_RS | OP_ADD | OP_SUB | OP_MUL | OP_DIV | OP_ASS | DEC_NUM | ID | FLOAT_NUM | LPAREN | RPAREN | LBRACK | RBRACK | LBRACE | RBRACE | PERIOD | COMMA | SEMICOL | COLON | FUNCTION_CALL | ARRAY | CHAR | STRING | COMMENT1 | COMMENT2 | WS )
+		// myParser.g:1:8: ( T__75 | T__76 | T__77 | SHORT_TYPE | INT_TYPE | LONG_TYPE | FLOAT_TYPE | DOUBLE_TYPE | LONGLONG_TYPE | CHAR_TYPE | VOID_TYPE | WHILE_ | FOR_ | IF_ | ELSE_ | RETURN_ | BREAK_ | CONTINUE_ | INCLUDE | DEFINE | OP_EQ | OP_LE | OP_GE | OP_NE | OP_GT | OP_LT | OP_ADDAS | OP_SUBAS | OP_MULAS | OP_DIVAS | OP_XORAS | OP_MODAS | OP_LSAS | OP_RSAS | OP_ADDADD | OP_SUBSUB | OP_NOT | OP_LAND | OP_LOR | OP_AND | OP_OR | OP_XOR | OP_LS | OP_RS | OP_ADD | OP_SUB | OP_MUL | OP_DIV | OP_ASS | DEC_NUM | ID | FLOAT_NUM | LPAREN | RPAREN | LBRACK | RBRACK | LBRACE | RBRACE | PERIOD | COMMA | SEMICOL | COLON | FUNCTION_CALL | ARRAY | CHAR | STRING | COMMENT1 | COMMENT2 | WS )
 		int alt13=69;
 		alt13 = dfa13.predict(input);
 		switch (alt13) {
@@ -2165,364 +2165,364 @@ public class myParserLexer extends Lexer {
 				}
 				break;
 			case 18 :
-				// myParser.g:1:152: CONTINUE
+				// myParser.g:1:152: CONTINUE_
 				{
-				mCONTINUE(); 
+				mCONTINUE_(); 
 
 				}
 				break;
 			case 19 :
-				// myParser.g:1:161: INCLUDE
+				// myParser.g:1:162: INCLUDE
 				{
 				mINCLUDE(); 
 
 				}
 				break;
 			case 20 :
-				// myParser.g:1:169: DEFINE
+				// myParser.g:1:170: DEFINE
 				{
 				mDEFINE(); 
 
 				}
 				break;
 			case 21 :
-				// myParser.g:1:176: OP_EQ
+				// myParser.g:1:177: OP_EQ
 				{
 				mOP_EQ(); 
 
 				}
 				break;
 			case 22 :
-				// myParser.g:1:182: OP_LE
+				// myParser.g:1:183: OP_LE
 				{
 				mOP_LE(); 
 
 				}
 				break;
 			case 23 :
-				// myParser.g:1:188: OP_GE
+				// myParser.g:1:189: OP_GE
 				{
 				mOP_GE(); 
 
 				}
 				break;
 			case 24 :
-				// myParser.g:1:194: OP_NE
+				// myParser.g:1:195: OP_NE
 				{
 				mOP_NE(); 
 
 				}
 				break;
 			case 25 :
-				// myParser.g:1:200: OP_GT
+				// myParser.g:1:201: OP_GT
 				{
 				mOP_GT(); 
 
 				}
 				break;
 			case 26 :
-				// myParser.g:1:206: OP_LT
+				// myParser.g:1:207: OP_LT
 				{
 				mOP_LT(); 
 
 				}
 				break;
 			case 27 :
-				// myParser.g:1:212: OP_ADDAS
+				// myParser.g:1:213: OP_ADDAS
 				{
 				mOP_ADDAS(); 
 
 				}
 				break;
 			case 28 :
-				// myParser.g:1:221: OP_SUBAS
+				// myParser.g:1:222: OP_SUBAS
 				{
 				mOP_SUBAS(); 
 
 				}
 				break;
 			case 29 :
-				// myParser.g:1:230: OP_MULAS
+				// myParser.g:1:231: OP_MULAS
 				{
 				mOP_MULAS(); 
 
 				}
 				break;
 			case 30 :
-				// myParser.g:1:239: OP_DIVAS
+				// myParser.g:1:240: OP_DIVAS
 				{
 				mOP_DIVAS(); 
 
 				}
 				break;
 			case 31 :
-				// myParser.g:1:248: OP_XORAS
+				// myParser.g:1:249: OP_XORAS
 				{
 				mOP_XORAS(); 
 
 				}
 				break;
 			case 32 :
-				// myParser.g:1:257: OP_MODAS
+				// myParser.g:1:258: OP_MODAS
 				{
 				mOP_MODAS(); 
 
 				}
 				break;
 			case 33 :
-				// myParser.g:1:266: OP_LSAS
+				// myParser.g:1:267: OP_LSAS
 				{
 				mOP_LSAS(); 
 
 				}
 				break;
 			case 34 :
-				// myParser.g:1:274: OP_RSAS
+				// myParser.g:1:275: OP_RSAS
 				{
 				mOP_RSAS(); 
 
 				}
 				break;
 			case 35 :
-				// myParser.g:1:282: OP_ADDADD
+				// myParser.g:1:283: OP_ADDADD
 				{
 				mOP_ADDADD(); 
 
 				}
 				break;
 			case 36 :
-				// myParser.g:1:292: OP_SUBSUB
+				// myParser.g:1:293: OP_SUBSUB
 				{
 				mOP_SUBSUB(); 
 
 				}
 				break;
 			case 37 :
-				// myParser.g:1:302: OP_NOT
+				// myParser.g:1:303: OP_NOT
 				{
 				mOP_NOT(); 
 
 				}
 				break;
 			case 38 :
-				// myParser.g:1:309: OP_LAND
+				// myParser.g:1:310: OP_LAND
 				{
 				mOP_LAND(); 
 
 				}
 				break;
 			case 39 :
-				// myParser.g:1:317: OP_LOR
+				// myParser.g:1:318: OP_LOR
 				{
 				mOP_LOR(); 
 
 				}
 				break;
 			case 40 :
-				// myParser.g:1:324: OP_AND
+				// myParser.g:1:325: OP_AND
 				{
 				mOP_AND(); 
 
 				}
 				break;
 			case 41 :
-				// myParser.g:1:331: OP_OR
+				// myParser.g:1:332: OP_OR
 				{
 				mOP_OR(); 
 
 				}
 				break;
 			case 42 :
-				// myParser.g:1:337: OP_XOR
+				// myParser.g:1:338: OP_XOR
 				{
 				mOP_XOR(); 
 
 				}
 				break;
 			case 43 :
-				// myParser.g:1:344: OP_LS
+				// myParser.g:1:345: OP_LS
 				{
 				mOP_LS(); 
 
 				}
 				break;
 			case 44 :
-				// myParser.g:1:350: OP_RS
+				// myParser.g:1:351: OP_RS
 				{
 				mOP_RS(); 
 
 				}
 				break;
 			case 45 :
-				// myParser.g:1:356: OP_ADD
+				// myParser.g:1:357: OP_ADD
 				{
 				mOP_ADD(); 
 
 				}
 				break;
 			case 46 :
-				// myParser.g:1:363: OP_SUB
+				// myParser.g:1:364: OP_SUB
 				{
 				mOP_SUB(); 
 
 				}
 				break;
 			case 47 :
-				// myParser.g:1:370: OP_MUL
+				// myParser.g:1:371: OP_MUL
 				{
 				mOP_MUL(); 
 
 				}
 				break;
 			case 48 :
-				// myParser.g:1:377: OP_DIV
+				// myParser.g:1:378: OP_DIV
 				{
 				mOP_DIV(); 
 
 				}
 				break;
 			case 49 :
-				// myParser.g:1:384: OP_ASS
+				// myParser.g:1:385: OP_ASS
 				{
 				mOP_ASS(); 
 
 				}
 				break;
 			case 50 :
-				// myParser.g:1:391: DEC_NUM
+				// myParser.g:1:392: DEC_NUM
 				{
 				mDEC_NUM(); 
 
 				}
 				break;
 			case 51 :
-				// myParser.g:1:399: ID
+				// myParser.g:1:400: ID
 				{
 				mID(); 
 
 				}
 				break;
 			case 52 :
-				// myParser.g:1:402: FLOAT_NUM
+				// myParser.g:1:403: FLOAT_NUM
 				{
 				mFLOAT_NUM(); 
 
 				}
 				break;
 			case 53 :
-				// myParser.g:1:412: LPAREN
+				// myParser.g:1:413: LPAREN
 				{
 				mLPAREN(); 
 
 				}
 				break;
 			case 54 :
-				// myParser.g:1:419: RPAREN
+				// myParser.g:1:420: RPAREN
 				{
 				mRPAREN(); 
 
 				}
 				break;
 			case 55 :
-				// myParser.g:1:426: LBRACK
+				// myParser.g:1:427: LBRACK
 				{
 				mLBRACK(); 
 
 				}
 				break;
 			case 56 :
-				// myParser.g:1:433: RBRACK
+				// myParser.g:1:434: RBRACK
 				{
 				mRBRACK(); 
 
 				}
 				break;
 			case 57 :
-				// myParser.g:1:440: LBRACE
+				// myParser.g:1:441: LBRACE
 				{
 				mLBRACE(); 
 
 				}
 				break;
 			case 58 :
-				// myParser.g:1:447: RBRACE
+				// myParser.g:1:448: RBRACE
 				{
 				mRBRACE(); 
 
 				}
 				break;
 			case 59 :
-				// myParser.g:1:454: PERIOD
+				// myParser.g:1:455: PERIOD
 				{
 				mPERIOD(); 
 
 				}
 				break;
 			case 60 :
-				// myParser.g:1:461: COMMA
+				// myParser.g:1:462: COMMA
 				{
 				mCOMMA(); 
 
 				}
 				break;
 			case 61 :
-				// myParser.g:1:467: SEMICOL
+				// myParser.g:1:468: SEMICOL
 				{
 				mSEMICOL(); 
 
 				}
 				break;
 			case 62 :
-				// myParser.g:1:475: COLON
+				// myParser.g:1:476: COLON
 				{
 				mCOLON(); 
 
 				}
 				break;
 			case 63 :
-				// myParser.g:1:481: FUNCTION_CALL
+				// myParser.g:1:482: FUNCTION_CALL
 				{
 				mFUNCTION_CALL(); 
 
 				}
 				break;
 			case 64 :
-				// myParser.g:1:495: ARRAY
+				// myParser.g:1:496: ARRAY
 				{
 				mARRAY(); 
 
 				}
 				break;
 			case 65 :
-				// myParser.g:1:501: CHAR
+				// myParser.g:1:502: CHAR
 				{
 				mCHAR(); 
 
 				}
 				break;
 			case 66 :
-				// myParser.g:1:506: STRING
+				// myParser.g:1:507: STRING
 				{
 				mSTRING(); 
 
 				}
 				break;
 			case 67 :
-				// myParser.g:1:513: COMMENT1
+				// myParser.g:1:514: COMMENT1
 				{
 				mCOMMENT1(); 
 
 				}
 				break;
 			case 68 :
-				// myParser.g:1:522: COMMENT2
+				// myParser.g:1:523: COMMENT2
 				{
 				mCOMMENT2(); 
 
 				}
 				break;
 			case 69 :
-				// myParser.g:1:531: WS
+				// myParser.g:1:532: WS
 				{
 				mWS(); 
 
@@ -2586,7 +2586,7 @@ public class myParserLexer extends Lexer {
 		}
 		@Override
 		public String getDescription() {
-			return "231:1: FLOAT_NUM : ( FLOAT_NUM1 | FLOAT_NUM2 | FLOAT_NUM3 );";
+			return "242:1: FLOAT_NUM : ( FLOAT_NUM1 | FLOAT_NUM2 | FLOAT_NUM3 );";
 		}
 	}
 
@@ -2872,7 +2872,7 @@ public class myParserLexer extends Lexer {
 		}
 		@Override
 		public String getDescription() {
-			return "1:1: Tokens : ( T__75 | T__76 | T__77 | SHORT_TYPE | INT_TYPE | LONG_TYPE | FLOAT_TYPE | DOUBLE_TYPE | LONGLONG_TYPE | CHAR_TYPE | VOID_TYPE | WHILE_ | FOR_ | IF_ | ELSE_ | RETURN_ | BREAK_ | CONTINUE | INCLUDE | DEFINE | OP_EQ | OP_LE | OP_GE | OP_NE | OP_GT | OP_LT | OP_ADDAS | OP_SUBAS | OP_MULAS | OP_DIVAS | OP_XORAS | OP_MODAS | OP_LSAS | OP_RSAS | OP_ADDADD | OP_SUBSUB | OP_NOT | OP_LAND | OP_LOR | OP_AND | OP_OR | OP_XOR | OP_LS | OP_RS | OP_ADD | OP_SUB | OP_MUL | OP_DIV | OP_ASS | DEC_NUM | ID | FLOAT_NUM | LPAREN | RPAREN | LBRACK | RBRACK | LBRACE | RBRACE | PERIOD | COMMA | SEMICOL | COLON | FUNCTION_CALL | ARRAY | CHAR | STRING | COMMENT1 | COMMENT2 | WS );";
+			return "1:1: Tokens : ( T__75 | T__76 | T__77 | SHORT_TYPE | INT_TYPE | LONG_TYPE | FLOAT_TYPE | DOUBLE_TYPE | LONGLONG_TYPE | CHAR_TYPE | VOID_TYPE | WHILE_ | FOR_ | IF_ | ELSE_ | RETURN_ | BREAK_ | CONTINUE_ | INCLUDE | DEFINE | OP_EQ | OP_LE | OP_GE | OP_NE | OP_GT | OP_LT | OP_ADDAS | OP_SUBAS | OP_MULAS | OP_DIVAS | OP_XORAS | OP_MODAS | OP_LSAS | OP_RSAS | OP_ADDADD | OP_SUBSUB | OP_NOT | OP_LAND | OP_LOR | OP_AND | OP_OR | OP_XOR | OP_LS | OP_RS | OP_ADD | OP_SUB | OP_MUL | OP_DIV | OP_ASS | DEC_NUM | ID | FLOAT_NUM | LPAREN | RPAREN | LBRACK | RBRACK | LBRACE | RBRACE | PERIOD | COMMA | SEMICOL | COLON | FUNCTION_CALL | ARRAY | CHAR | STRING | COMMENT1 | COMMENT2 | WS );";
 		}
 	}
 
