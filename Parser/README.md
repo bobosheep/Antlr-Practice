@@ -26,8 +26,8 @@ use ANTLR to develop a Parser for C code
     ```
     $ make executeAll
     ```
-    If you don't have any output, you done.
-    you can modify the c code to see syntax error.
+    If you don't have any error output, you success.
+    You can modify the c code to see syntax error.
 
 ## Some Limit of my parser
 1.  No support ++, --
