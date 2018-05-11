@@ -1,4 +1,4 @@
-# Project 1-AntlrPractice
+# Project 1-Lexer
 use ANTLR to develop a lexical analyzer for C code
 
 ## How to use 
