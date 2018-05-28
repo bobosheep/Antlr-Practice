@@ -108,6 +108,43 @@ public class myCheckerLexer extends Lexer {
 	}
 
 
+	    boolean TRACEON = false;
+	    HashMap<String, Integer> symbolTable = new HashMap<String, Integer>() ;
+
+	    /*
+	    public enum typeInfo{
+	        Short,
+	        Integer, 
+	        Long,
+	        Float,
+	        Double, 
+	        Long Long, 
+	        Char, 
+	        Void, 
+	        Unknown,
+	        No_exist,
+	        Error
+	    }
+	    */
+
+	    int attr_type;
+
+	    /*
+	    attr_type:
+	        1   =>  short
+	        2   =>  integer, 
+	        3   =>  long, 
+	        4   =>  float,
+	        5   =>  double
+	        6   =>  long long
+	        7   =>  char,
+	        8   =>  void,
+	        -1  =>  do not exist,
+	        -2  =>  error
+	     */
+
+
+
 	public myCheckerLexer(CharStream input) {
 		super(input);
 		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);

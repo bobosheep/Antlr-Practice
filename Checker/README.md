@@ -1,5 +1,5 @@
-# Project 2-Parser
-use ANTLR to develop a Parser for a subset of C code
+# Project 3-Checker
+use ANTLR to develop a Checker for a subset of C code
 
 ## How to use 
 *   Clone the reposity
@@ -29,10 +29,12 @@ use ANTLR to develop a Parser for a subset of C code
     If you don't have any error output, you success.
     You can modify the c code to see syntax error.
 
-## Some Limit of my parser
+## Some Limit of my checker
 1.  No support ++, --
 2.  If you add a blank after 'else' condition, you will get error
 3.  All of these condition, 'if', 'else if', 'else', 'while' and 'for', you should use '{' and '}' whether there is only one statement
+4.  No support +=, -=, *=, /=, ^=
+5.  Decimal number will be integer by default and real number will be float by default, so there will be type error if two types are different. 
 
 
 

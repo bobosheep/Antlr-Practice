@@ -3,16 +3,16 @@ options{
     language = Java;
     backtrack=true;
     memoize = true;
-    k=6;
+    k=2;
 }
 
 @header{
     import java.util.HashMap;
 }
 
-@member{
-    boolean TRACEON;
-    HashMap<String, Integer> symbolTable = new HashMap<String, Integer>;
+@members{
+    boolean TRACEON = false;
+    HashMap<String, Integer> symbolTable = new HashMap<String, Integer>() ;
 
     /*
     public enum typeInfo{
@@ -62,7 +62,7 @@ mainfunction:
         stats*  WS*
         RETURN_ (DEC_NUM | FLOAT_NUM)? SEMICOL 
     RBRACE WS*      
-    { if (TRACEON) System.out.println("MAIN (){ stats } ")}
+    { if (TRACEON) System.out.println("MAIN (){ stats } ") ; }
 ;
 
 
@@ -78,41 +78,41 @@ type returns [int attr_type]
 ;
 
 stats
-    :   //assignmentStat  
-        whileStat       
+    :   assignmentStat  
+    |   whileStat       
     |   ifelseStat      
     |   forStat         
     |   declareStat     
     |   procedStat      
-    |   exprList        
+   // |   exprList        
     |   breakStat       
     |   continueStat    
 ;
-/*
+
 assignmentStat returns [int attr_type]
-    :   a = ID WS* OP_ASS WS* expr SEMICOL
+    :   a = ID OP_ASS expr SEMICOL
     {
-       if(symbolTable.containsKey($ID.text))
+       if(symbolTable.containsKey($a.text))
        {
-           if($a.attr_type != $expr.attr_type)
+           if(symbolTable.get($a.text) != $expr.attr_type)
            {
-                System.out.println("Type Error " + $ID.getLine() + ": Type mismatch for the two side of assignmentStat");
+                System.out.println("Type Error on Line " + $a.getLine() + " : Type mismatch for the two side of assignmentStat");
                 $attr_type = -2;
            }
            else
            {
-                $attr_type = $a.attr_type
+                $attr_type = symbolTable.get($a.text);
            }
        } 
        else
        {
-            System.out.println("Type Error " + $ID.getLine() + ":Unknown Idenifier " + $ID.text);
+            System.out.println("Type Error on Line " + $a.getLine() + " : Unknown Idenifier " + $a.text);
             $attr_type = -1;
        }
     }                      
-    |   ID WS* OP_ASS WS* (DEC_NUM | FLOAT_NUM)  SEMICOL    
+    |   ID  OP_ASS  (DEC_NUM | FLOAT_NUM)  SEMICOL    
 ;
- */
+
 whileStat
     :
     
@@ -158,8 +158,8 @@ function
     LBRACE 
         stats* WS*
         'return' (DEC_NUM | FLOAT_NUM)? SEMICOL 
-    RBRACE                                 |
-    type FUNCTION_CALL params* RPAREN  SEMICOL
+    RBRACE                                 
+    |   type FUNCTION_CALL params* RPAREN  SEMICOL
 
 ;
 
@@ -174,8 +174,9 @@ declareStat returns [int attr_type]
             }
             else if( ($type.attr_type != $b.attr_type ) && ( $b.text != null) )
             {
-                System.out.println("Type Error " + $b.start.getLine() + " : Type mismatch for 2 side operands in an assignmentStat. ");
-                $attr_type = -2
+                System.out.println("Type Error on Line " + $b.start.getLine() + " : Type mismatch for 2 side operands in an assignmentStat. ");
+                $attr_type = -2;
+                symbolTable.put($a.text, $type.attr_type);
             }
             else
             {
@@ -186,30 +187,32 @@ declareStat returns [int attr_type]
             {
                 if (symbolTable.containsKey($c.text))
                 {
-                    System.out.println("Type Error " + $c.getLine() + " : Redeclared identifier " + $c.text + ".");
+                    System.out.println("Type Error on Line " + $c.getLine() + " : Redeclared identifier " + $c.text + ".");
                     $attr_type = -2;
                 }
                 else if( ($type.attr_type != $d.attr_type ) && ( $d.text != null) )
                 {
-                    System.out.println("Type Error " + $d.start.getLine() + " : Type mismatch for 2 side operands in an assignmentStat. ");
+                    System.out.println("Type Error on Line " + $d.start.getLine() + " : Type mismatch for 2 side operands in an assignmentStat. ");
                     $attr_type = -2;
+                    symbolTable.put($c.text, $type.attr_type);
                 }
                 else
                 {
                     symbolTable.put($c.text, $type.attr_type);
                 }
             }
-        } 
+        }
+        
 ;
 
 procedStat
     :   FUNCTION_CALL arguments RPAREN SEMICOL
 ;
-
+/* 
 exprList returns [int attr_type]
     :   expr { $attr_type = $expr.attr_type } (COMMA expr)* SEMICOL
 ;
-
+*/
 breakStat
     :   BREAK_ SEMICOL
 ;
@@ -232,55 +235,51 @@ param
 ;
 
 expr returns [int attr_type]
-    :   a = operationStat { $attr_type = $a.attr_type }
+    :   a = operationStat { $attr_type = $a.attr_type ; }
     ((OP_LAND | OP_LOR) b = operationStat)*
-    {
-        if($b.attr_type != $a.attr_type)
-        {
-            System.out.println("Type Error " + $a.start.getLine() + " : Type mismatch in the expression");
-            $attr_type = -2;
-        }
-    }
 ;
 
 operationStat returns [int attr_type]
-    :   a = add { $attr_type = $a.attr_type } 
+    :   a = add { $attr_type = $a.attr_type ; } 
         ((  OP_EQ | OP_LE | OP_GE | OP_NE | OP_GT | OP_LT | OP_ASS |
             OP_ADDAS | OP_SUBAS | OP_MULAS | OP_DIVAS | OP_XORAS |
-            OP_MODAS | OP_LSAS | OP_RSAS )  b = add)*
-        {
-            if ($a.attr_type != $b.attr_type)
+            OP_MODAS | OP_LSAS | OP_RSAS )  b = add
             {
-                System.out.println("Type Error " + $a.start.getLine() + " : Type mismatch for operationStat in the expression");
-                $attr_type = -2;
+                if ($a.attr_type != $b.attr_type)
+                {
+                    System.out.println("Type Error on Line " + $a.start.getLine() + " : Type mismatch for operationStat in the expression");
+                    $attr_type = -2;
+                }
             }
-        }
+        )*
 ;
 
 add returns [int attr_type]
     :   
-    a = multiply { $attr_type = $a.attr_type }
-    ((OP_ADD | OP_SUB) b = multiply)*
-    {
-        if ($a.attr_type != $b.attr_type)
+    a = multiply { $attr_type = $a.attr_type ; }
+    ((OP_ADD | OP_SUB) b = multiply
         {
-            System.out.println("Type Error " + $a.start.getLine() + " : Type mismatch for add or sub in the expression");
-            $attr_type = -2;
+            if ($a.attr_type != $b.attr_type)
+            {
+                System.out.println("Type Error on Line " + $a.start.getLine() + " : Type mismatch for add or sub in the expression");
+                $attr_type = -2;
+            }
         }
-    }
+    )*
 ;
 
 multiply returns [int attr_type]
     :
-    a = atom { $attr_type = $a.attr_type } 
-    ((OP_MUL | OP_DIV ) b = atom)*
-    {
-        if ($a.attr_type != $b.attr_type)
+    a = atom { $attr_type = $a.attr_type ; } 
+    ((OP_MUL | OP_DIV ) b = atom
         {
-            System.out.println("Type Error " + $a.start.getLine() + " : Type mismatch for mul or div in the expression");
-            $attr_type = -2;
+            if ($a.attr_type != $b.attr_type)
+            {
+                System.out.println("Type Error on Line " + $a.start.getLine() + " : Type mismatch for mul or div in the expression");
+                $attr_type = -2;
+            }
         }
-    }
+    )*
 
 ;
 
@@ -296,11 +295,11 @@ atom returns [int attr_type]
             }
             else
             {
-                System.out.println("Type Error " + $ID.getLine() + ":Unknown Idenifier " + $ID.text);
+                System.out.println("Type Error on Line " + $ID.getLine() + " : Unknown Idenifier " + $ID.text);
                 $attr_type = -1;
             }
         }
-    |   LPAREN expr RPAREN { $attr_type = $expr.attr_type }
+    |   LPAREN expr RPAREN { $attr_type = $expr.attr_type ; }
 ;
 
 /*---------------------*/
