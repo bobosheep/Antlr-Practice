@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 myChecker.g 2018-05-29 00:20:00
+// $ANTLR 3.5.2 myChecker.g 2018-05-29 00:51:32
 
     import java.util.HashMap;
 
@@ -927,7 +927,7 @@ public class myCheckerParser extends Parser {
 					       {
 					           if(symbolTable.get((a!=null?a.getText():null)) != (expr1!=null?((myCheckerParser.expr_return)expr1).attr_type:0))
 					           {
-					                System.out.println("Type Error on Line " + a.getLine() + " : Type mismatch for the two side of assignmentStat");
+					                System.out.println("Type Error on Line : " + a.getLine() + " : Type mismatch for the two side of assignment");
 					                attr_type = -2;
 					           }
 					           else
@@ -937,7 +937,7 @@ public class myCheckerParser extends Parser {
 					       } 
 					       else
 					       {
-					            System.out.println("Type Error on Line " + a.getLine() + " : Unknown Idenifier " + (a!=null?a.getText():null));
+					            System.out.println("Type Error on Line : " + a.getLine() + " : Unknown Idenifier " + (a!=null?a.getText():null));
 					            attr_type = -1;
 					       }
 					    }
@@ -2222,12 +2222,12 @@ public class myCheckerParser extends Parser {
 			if ( state.backtracking==0 ) {
 			            if (symbolTable.containsKey((a!=null?a.getText():null)))
 			            {
-			                System.out.println("Type Error " + a.getLine() + " : Redeclared identifier " + (a!=null?a.getText():null) + ".");
+			                System.out.println("Type Error : " + a.getLine() + " : Redeclared identifier " + (a!=null?a.getText():null) + ".");
 			                attr_type = -2;
 			            }
 			            else if( (type2 != (b!=null?((myCheckerParser.expr_return)b).attr_type:0) ) && ( (b!=null?input.toString(b.start,b.stop):null) != null) )
 			            {
-			                System.out.println("Type Error on Line " + (b!=null?(b.start):null).getLine() + " : Type mismatch for 2 side operands in an assignmentStat. ");
+			                System.out.println("Type Error on Line : " + (b!=null?(b.start):null).getLine() + " : Type mismatch for 2 side operands in an assignment.");
 			                attr_type = -2;
 			                symbolTable.put((a!=null?a.getText():null), type2);
 			            }
@@ -2240,12 +2240,12 @@ public class myCheckerParser extends Parser {
 			            {
 			                if (symbolTable.containsKey((c!=null?c.getText():null)))
 			                {
-			                    System.out.println("Type Error on Line " + c.getLine() + " : Redeclared identifier " + (c!=null?c.getText():null) + ".");
+			                    System.out.println("Type Error on Line : " + c.getLine() + " : Redeclared identifier " + (c!=null?c.getText():null) + ".");
 			                    attr_type = -2;
 			                }
 			                else if( (type2 != (d!=null?((myCheckerParser.expr_return)d).attr_type:0) ) && ( (d!=null?input.toString(d.start,d.stop):null) != null) )
 			                {
-			                    System.out.println("Type Error on Line " + (d!=null?(d.start):null).getLine() + " : Type mismatch for 2 side operands in an assignmentStat. ");
+			                    System.out.println("Type Error on Line : " + (d!=null?(d.start):null).getLine() + " : Type mismatch for 2 side operands in an assignment.");
 			                    attr_type = -2;
 			                    symbolTable.put((c!=null?c.getText():null), type2);
 			                }
@@ -2663,7 +2663,7 @@ public class myCheckerParser extends Parser {
 					if ( state.backtracking==0 ) {
 					                if ((a!=null?((myCheckerParser.add_return)a).attr_type:0) != (b!=null?((myCheckerParser.add_return)b).attr_type:0))
 					                {
-					                    System.out.println("Type Error on Line " + (a!=null?(a.start):null).getLine() + " : Type mismatch for operationStat in the expression");
+					                    System.out.println("Type Error on Line : " + (a!=null?(a.start):null).getLine() + " : Type mismatch for operation in the expression.");
 					                    attr_type = -2;
 					                }
 					            }
@@ -2748,7 +2748,7 @@ public class myCheckerParser extends Parser {
 					if ( state.backtracking==0 ) {
 					            if ((a!=null?((myCheckerParser.multiply_return)a).attr_type:0) != (b!=null?((myCheckerParser.multiply_return)b).attr_type:0))
 					            {
-					                System.out.println("Type Error on Line " + (a!=null?(a.start):null).getLine() + " : Type mismatch for add or sub in the expression");
+					                System.out.println("Type Error on Line : " + (a!=null?(a.start):null).getLine() + " : Type mismatch for add or sub in the expression.");
 					                retval.attr_type = -2;
 					            }
 					        }
@@ -2835,7 +2835,7 @@ public class myCheckerParser extends Parser {
 					if ( state.backtracking==0 ) {
 					            if ((a!=null?((myCheckerParser.atom_return)a).attr_type:0) != (b!=null?((myCheckerParser.atom_return)b).attr_type:0))
 					            {
-					                System.out.println("Type Error on Line " + (a!=null?(a.start):null).getLine() + " : Type mismatch for mul or div in the expression");
+					                System.out.println("Type Error on Line : " + (a!=null?(a.start):null).getLine() + " : Type mismatch for mul or div in the expression.");
 					                retval.attr_type = -2;
 					            }
 					        }
@@ -2951,7 +2951,7 @@ public class myCheckerParser extends Parser {
 					            }
 					            else
 					            {
-					                System.out.println("Type Error on Line " + ID3.getLine() + " : Unknown Idenifier " + (ID3!=null?ID3.getText():null));
+					                System.out.println("Type Error on Line : " + ID3.getLine() + " : Unknown Idenifier " + (ID3!=null?ID3.getText():null) + ".");
 					                retval.attr_type = -1;
 					            }
 					        }
@@ -3180,34 +3180,6 @@ public class myCheckerParser extends Parser {
 
 	// Delegated rules
 
-	public final boolean synpred54_myChecker() {
-		state.backtracking++;
-		int start = input.mark();
-		try {
-			synpred54_myChecker_fragment(); // can never throw exception
-		} catch (RecognitionException re) {
-			System.err.println("impossible: "+re);
-		}
-		boolean success = !state.failed;
-		input.rewind(start);
-		state.backtracking--;
-		state.failed=false;
-		return success;
-	}
-	public final boolean synpred27_myChecker() {
-		state.backtracking++;
-		int start = input.mark();
-		try {
-			synpred27_myChecker_fragment(); // can never throw exception
-		} catch (RecognitionException re) {
-			System.err.println("impossible: "+re);
-		}
-		boolean success = !state.failed;
-		input.rewind(start);
-		state.backtracking--;
-		state.failed=false;
-		return success;
-	}
 	public final boolean synpred60_myChecker() {
 		state.backtracking++;
 		int start = input.mark();
@@ -3222,11 +3194,11 @@ public class myCheckerParser extends Parser {
 		state.failed=false;
 		return success;
 	}
-	public final boolean synpred42_myChecker() {
+	public final boolean synpred54_myChecker() {
 		state.backtracking++;
 		int start = input.mark();
 		try {
-			synpred42_myChecker_fragment(); // can never throw exception
+			synpred54_myChecker_fragment(); // can never throw exception
 		} catch (RecognitionException re) {
 			System.err.println("impossible: "+re);
 		}
@@ -3236,11 +3208,11 @@ public class myCheckerParser extends Parser {
 		state.failed=false;
 		return success;
 	}
-	public final boolean synpred7_myChecker() {
+	public final boolean synpred42_myChecker() {
 		state.backtracking++;
 		int start = input.mark();
 		try {
-			synpred7_myChecker_fragment(); // can never throw exception
+			synpred42_myChecker_fragment(); // can never throw exception
 		} catch (RecognitionException re) {
 			System.err.println("impossible: "+re);
 		}
@@ -3269,6 +3241,34 @@ public class myCheckerParser extends Parser {
 		int start = input.mark();
 		try {
 			synpred38_myChecker_fragment(); // can never throw exception
+		} catch (RecognitionException re) {
+			System.err.println("impossible: "+re);
+		}
+		boolean success = !state.failed;
+		input.rewind(start);
+		state.backtracking--;
+		state.failed=false;
+		return success;
+	}
+	public final boolean synpred27_myChecker() {
+		state.backtracking++;
+		int start = input.mark();
+		try {
+			synpred27_myChecker_fragment(); // can never throw exception
+		} catch (RecognitionException re) {
+			System.err.println("impossible: "+re);
+		}
+		boolean success = !state.failed;
+		input.rewind(start);
+		state.backtracking--;
+		state.failed=false;
+		return success;
+	}
+	public final boolean synpred7_myChecker() {
+		state.backtracking++;
+		int start = input.mark();
+		try {
+			synpred7_myChecker_fragment(); // can never throw exception
 		} catch (RecognitionException re) {
 			System.err.println("impossible: "+re);
 		}

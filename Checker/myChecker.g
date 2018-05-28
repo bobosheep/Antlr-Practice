@@ -96,7 +96,7 @@ assignmentStat returns [int attr_type]
        {
            if(symbolTable.get($a.text) != $expr.attr_type)
            {
-                System.out.println("Type Error on Line " + $a.getLine() + " : Type mismatch for the two side of assignmentStat");
+                System.out.println("Type Error on Line : " + $a.getLine() + " : Type mismatch for the two side of assignment");
                 $attr_type = -2;
            }
            else
@@ -106,7 +106,7 @@ assignmentStat returns [int attr_type]
        } 
        else
        {
-            System.out.println("Type Error on Line " + $a.getLine() + " : Unknown Idenifier " + $a.text);
+            System.out.println("Type Error on Line : " + $a.getLine() + " : Unknown Idenifier " + $a.text);
             $attr_type = -1;
        }
     }                      
@@ -169,12 +169,12 @@ declareStat returns [int attr_type]
         {
             if (symbolTable.containsKey($a.text))
             {
-                System.out.println("Type Error " + $a.getLine() + " : Redeclared identifier " + $a.text + ".");
+                System.out.println("Type Error : " + $a.getLine() + " : Redeclared identifier " + $a.text + ".");
                 $attr_type = -2;
             }
             else if( ($type.attr_type != $b.attr_type ) && ( $b.text != null) )
             {
-                System.out.println("Type Error on Line " + $b.start.getLine() + " : Type mismatch for 2 side operands in an assignmentStat. ");
+                System.out.println("Type Error on Line : " + $b.start.getLine() + " : Type mismatch for 2 side operands in an assignment.");
                 $attr_type = -2;
                 symbolTable.put($a.text, $type.attr_type);
             }
@@ -187,12 +187,12 @@ declareStat returns [int attr_type]
             {
                 if (symbolTable.containsKey($c.text))
                 {
-                    System.out.println("Type Error on Line " + $c.getLine() + " : Redeclared identifier " + $c.text + ".");
+                    System.out.println("Type Error on Line : " + $c.getLine() + " : Redeclared identifier " + $c.text + ".");
                     $attr_type = -2;
                 }
                 else if( ($type.attr_type != $d.attr_type ) && ( $d.text != null) )
                 {
-                    System.out.println("Type Error on Line " + $d.start.getLine() + " : Type mismatch for 2 side operands in an assignmentStat. ");
+                    System.out.println("Type Error on Line : " + $d.start.getLine() + " : Type mismatch for 2 side operands in an assignment.");
                     $attr_type = -2;
                     symbolTable.put($c.text, $type.attr_type);
                 }
@@ -247,7 +247,7 @@ operationStat returns [int attr_type]
             {
                 if ($a.attr_type != $b.attr_type)
                 {
-                    System.out.println("Type Error on Line " + $a.start.getLine() + " : Type mismatch for operationStat in the expression");
+                    System.out.println("Type Error on Line : " + $a.start.getLine() + " : Type mismatch for operation in the expression.");
                     $attr_type = -2;
                 }
             }
@@ -261,7 +261,7 @@ add returns [int attr_type]
         {
             if ($a.attr_type != $b.attr_type)
             {
-                System.out.println("Type Error on Line " + $a.start.getLine() + " : Type mismatch for add or sub in the expression");
+                System.out.println("Type Error on Line : " + $a.start.getLine() + " : Type mismatch for add or sub in the expression.");
                 $attr_type = -2;
             }
         }
@@ -275,7 +275,7 @@ multiply returns [int attr_type]
         {
             if ($a.attr_type != $b.attr_type)
             {
-                System.out.println("Type Error on Line " + $a.start.getLine() + " : Type mismatch for mul or div in the expression");
+                System.out.println("Type Error on Line : " + $a.start.getLine() + " : Type mismatch for mul or div in the expression.");
                 $attr_type = -2;
             }
         }
@@ -295,7 +295,7 @@ atom returns [int attr_type]
             }
             else
             {
-                System.out.println("Type Error on Line " + $ID.getLine() + " : Unknown Idenifier " + $ID.text);
+                System.out.println("Type Error on Line : " + $ID.getLine() + " : Unknown Idenifier " + $ID.text + ".");
                 $attr_type = -1;
             }
         }
