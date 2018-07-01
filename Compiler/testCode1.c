@@ -2,6 +2,7 @@
 
 int a;
 int b;
+float c;
 void main ()
 {
 /*
@@ -9,7 +10,9 @@ void main ()
   line 
   comments.
 */
-	a=-5;
-	b=-a+2;
-	printf ("b=%d\n",b);
+	a = -15;
+	b = a + 2;
+  c = 5;
+	printf ("b = %d\n", b);
+  printf ("c = %d\n", c);
 }

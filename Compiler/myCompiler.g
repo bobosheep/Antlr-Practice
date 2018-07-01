@@ -139,13 +139,15 @@ functions
     ;
 				  
 function
-    :   type ID '(' RPAREN
+    :   type ID LPAREN RPAREN
         LBRACE
             {
+
+                if ( TRACEON ) System.out.println("function");
                 /* output function prologue */
                 prologue($ID.text);
             }
-            l_declarations statements 
+            l_declarations statements
         RBRACE
 
             {
@@ -159,6 +161,8 @@ function
 declarations
     : type ID SEMICOL declarations
       { 
+        if ( TRACEON ) System.out.println("declarations : type ID SEMICOL declarations");
+
 		/* code generation */
 		
         switch($type.attr_type) 
@@ -184,16 +188,41 @@ declarations
 		}
 	  }
     | 
+    {    if ( TRACEON ) System.out.println("declarations : ");  }
     ;
 
 
 l_declarations
     :
-    type ID ';' l_declarations
+    type ID SEMICOL l_declarations
     {
-        /* Not implement local variable*/ 
+        if( TRACEON ) System.out.println("l_declarations : type ID ';' l_declarations");
+        
+		/* code generation */
+		switch($type.attr_type) 
+        {
+		    case 1: 
+                /* Type: short, size=> 2 bytes, alignment=> 2 byte boundary. */
+		        DataCode.add("\t .common " + $ID.text + ",2,2");
+				break;
+            case 2: 
+                /* Type: ineteger, size=> 4 bytes, alignment=> 4 byte boundary. */
+		        DataCode.add("\t .common " + $ID.text + ",4,4");
+				break;
+            case 3: 
+                /* Type: long long, size=> 8 bytes, alignment=> 8 byte boundary. */
+		        DataCode.add("\t .common " + $ID.text + ",8,8");
+				break;
+
+            case 4: 
+                /* Type: float, size=> 4 bytes, alignment=> 4 byte boundary. */
+		        DataCode.add("\t .common " + $ID.text + ",4,4");
+				break;
+		    default:
+		}
     }
     | 
+    {   if( TRACEON ) System.out.println("l_declarations : ");         }
     ;
 
 
@@ -205,7 +234,7 @@ type returns [int attr_type]
     |   DOUBLE_TYPE     {   if (TRACEON) System.out.println("type: DOUBLE") ; $attr_type = 5 ;     }   
     |   LONGLONG_TYPE   {   if (TRACEON) System.out.println("type: LONGLONG") ; $attr_type = 6 ;   } 
     |   CHAR_TYPE       {   if (TRACEON) System.out.println("type: CHAR") ; $attr_type = 7 ;       }      
-    |   VOID_TYPE       {   if (TRACEON) System.out.println("type: VOID") ;                        }
+    |   VOID_TYPE       {   if (TRACEON) System.out.println("type: VOID") ; $attr_type = 0 ;       }
 ;
 
 statements: statement statements
@@ -215,10 +244,12 @@ statements: statement statements
 statement returns [int attr_type]
     :   ID OP_ASS a = expr SEMICOL
         {
+             if( TRACEON ) System.out.println("statement : ID OP_ASS a = expr SEMICOL ");
             TextCode.add("\t movl " + "\%" + reg_map.get($a.reg_num) + "," + $ID.text + "(\%rip)");
         }
     |   IF_ LPAREN b = expr RPAREN
         {
+            if( TRACEON ) System.out.println("statement : IF_ LPAREN b = expr RPAREN");
             String label = newLabel();
             TextCode.add("\t cmpl " + "$0, " + "\%" + reg_map.get($b.reg_num));
             TextCode.add("\t je " + label);
@@ -227,12 +258,13 @@ statement returns [int attr_type]
         {
             TextCode.add(label + ":");
         }
-    |   printstat
+    |   printstat {if( TRACEON ) System.out.println("statement : printstat");}
     ;
 
 expr returns [int attr_type, int reg_num, String str]
 	:   a = multiply
         {
+            if( TRACEON ) System.out.println("expr : a = multiply");
             $attr_type = $a.attr_type;
             $reg_num = $a.reg_num;
             $str = $a.str;
@@ -249,6 +281,7 @@ expr returns [int attr_type, int reg_num, String str]
 multiply returns [int attr_type, int reg_num, String str]
     :   a = signed 
         { 
+            if( TRACEON ) System.out.println("multiply : a = signed");
             $attr_type = $a.attr_type;
             $reg_num = $a.reg_num;
             $str = $a.str;
@@ -328,19 +361,39 @@ ifthenstat
 	;
 
 printstat
-    :   'printf' '(' a=STRING ',' ID  ')' ';'
+    :   'printf' LPAREN a=STRING (COMMA ID )* RPAREN SEMICOL
     {
-        String label = newLabel();
-        DataCode.add(label + ":");
-        DataCode.add("\t .string " + $a.text);
-        TextCode.add("\t movl " + $ID.text + "(\%rip), " + "\%esi");
-        TextCode.add("\t movl " + "$" + label + ", " + "\%edi");
+            String label = newLabel();
+            DataCode.add(label + ":");
+            DataCode.add("\t .string " + $a.text);
+
+
+        if ($ID.text != null)
+        {
+            TextCode.add("\t movl " + $ID.text + "(\%rip), " + "\%esi");
+            TextCode.add("\t movl " + "$" + label + ", " + "\%edi");
+        }
         TextCode.add("\t call printf");
     }
     ;
 
 
 
+
+/*----------------------------------------------*/
+/*       special characters / punctuations      */
+/*----------------------------------------------*/
+
+LPAREN : '(';
+RPAREN : ')';
+LBRACK : '[';
+RBRACK : ']';
+LBRACE : '{';
+RBRACE : '}';
+PERIOD : '.';
+COMMA : ',';
+SEMICOL : ';';
+COLON : ':';
 
 
 /*--------------------------*/
@@ -397,20 +450,6 @@ OP_MUL   :   '*'    ;
 OP_DIV   :   '/'    ;
 OP_ASS   :   '='    ;
 
-/*----------------------------------------------*/
-/*       special characters / punctuations      */
-/*----------------------------------------------*/
-
-LPAREN : '(';
-RPAREN : ')';
-LBRACK : '[';
-RBRACK : ']';
-LBRACE : '{';
-RBRACE : '}';
-PERIOD : '.';
-COMMA : ',';
-SEMICOL : ';';
-COLON : ':';
 
 
 /*---------------------*/
@@ -441,17 +480,17 @@ DEFINE      :   '#define'   ;
 /*-----------------*/
 /*      Others     */
 /*-----------------*/
+fragment FLOAT_NUM1: (DIGIT)+'.'(DIGIT)*;
+fragment FLOAT_NUM2: '.'(DIGIT)+;
+fragment FLOAT_NUM3: (DIGIT)+;
+fragment LETTER : 'a'..'z' | 'A'..'Z' | '_';
+fragment DIGIT : '0'..'9';
 
 DEC_NUM : ('0' | ('1'..'9')(DIGIT)*);
 
 ID : (LETTER)(LETTER | DIGIT)*;
 
 FLOAT_NUM: FLOAT_NUM1 | FLOAT_NUM2 | FLOAT_NUM3;
-fragment FLOAT_NUM1: (DIGIT)+'.'(DIGIT)*;
-fragment FLOAT_NUM2: '.'(DIGIT)+;
-fragment FLOAT_NUM3: (DIGIT)+;
-fragment LETTER : 'a'..'z' | 'A'..'Z' | '_';
-fragment DIGIT : '0'..'9';
 
 
 /*-------------------*/
